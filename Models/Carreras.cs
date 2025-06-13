@@ -14,7 +14,7 @@ namespace SistemaAcademico.Models
         [Required(ErrorMessage = "debe agregar un numero")]
         public int Years { get; set; }
 
-        [Required(ErrorMessage = "debe seleccionar un titulo")]
+        [Required(ErrorMessage = "debe agregar un titulo")]
         public string Title { get; set; }
 
         [Required(ErrorMessage = "debe seleccionar una modalidad")]

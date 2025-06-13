@@ -15,12 +15,7 @@
     </div>
     <div class="form-group">
         <label asp-for="Carrera.Title"></label>
-        <select asp-for="Carrera.Title"
-            asp-items="@(new SelectList(Model.Titles))"
-            class="form-control"
-        >
-            <option value="">Seleccione un titulo</option>
-        </select>
+        <input asp-for="Carrera.Title" class="form-control" />
         <span asp-validation-for="Carrera.Title" class="text-danger"></span>
     </div>
     <div class="form-group">

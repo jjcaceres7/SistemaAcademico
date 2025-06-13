@@ -1,0 +1,16 @@
+[
+  {
+    "Id": 1,
+    "Name": "Ingeniería en Sistemas",
+    "Years": 5,
+    "Title": "Ingeniero/a",
+    "Modality": "Presencial"
+  },
+  {
+    "Id": 2,
+    "Name": "Abogacía",
+    "Years": 5,
+    "Title": "Abogado/a",
+    "Modality": "Hibrida"
+  }
+]

@@ -5,8 +5,8 @@
         public static List<string> List = new List<string>
         {
             "Presencial",
-            "Semipresencial",
-            "Virtual"
+            "Virtual",
+            "Hibrida"
         };
     }
 }
