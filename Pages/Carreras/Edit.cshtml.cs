@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SistemaAcademico.Data;
+using SistemaAcademico.Helpers;
 using SistemaAcademico.Models;
+using SistemaAcademico.Servicios;
 
 namespace SistemaAcademico.Pages.Carreras
 {
@@ -9,34 +11,32 @@ namespace SistemaAcademico.Pages.Carreras
     {
         [BindProperty]
         public Carrera Carrera { get; set; }
+        public List<string> Modalities { get; set; } = Helpers.OpcionesModalidad.List;
+
         public void OnGet(int id)
         {
-            foreach (var c in DatosCompartidos.Carreras)
+            Modalities = OpcionesModalidad.List;
+
+            Carrera? carrera = Servicios.ServiciosCarrera.ObtenerCarreraPorId(id);
+            if (carrera != null)
             {
-                if (c.Id == id)
-                {
-                    Carrera = c;
-                    break;
-                }
+                Carrera = carrera;
             }
+            else
+            {
+                ModelState.AddModelError(string.Empty, "Carrera no encontrada.");
+            }
+
         }
         public IActionResult OnPost()
         {
+            Modalities = OpcionesModalidad.List;
+
             if (!ModelState.IsValid)
             {
                 return Page();
             }
-            foreach (var c in DatosCompartidos.Carreras)
-            {
-                if (c.Id == Carrera.Id)
-                {
-                    c.Name = Carrera.Name;
-                    c.Modality= Carrera.Modality;
-                    c.Years = Carrera.Years;
-                    c.Title = Carrera.Title;
-                    break;
-                }
-            }
+            ServiciosCarrera.editarCarrera(Carrera);
             return RedirectToPage("Index");
         }
     }

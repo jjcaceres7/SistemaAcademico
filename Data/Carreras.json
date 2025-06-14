@@ -1,16 +1,23 @@
 [
   {
-    "Id": 1,
-    "Name": "Ingeniería en Sistemas",
-    "Years": 5,
-    "Title": "Ingeniero/a",
-    "Modality": "Presencial"
-  },
-  {
     "Id": 2,
-    "Name": "Abogacía",
+    "Name": "Abogac\u00EDa 2",
     "Years": 5,
     "Title": "Abogado/a",
     "Modality": "Hibrida"
+  },
+  {
+    "Id": 3,
+    "Name": "Casa4",
+    "Years": 4,
+    "Title": "Arquitecto/a4",
+    "Modality": "Hibrida"
+  },
+  {
+    "Id": 4,
+    "Name": "Casa21",
+    "Years": 21,
+    "Title": "Arquitecto/a21",
+    "Modality": "Virtual"
   }
 ]
