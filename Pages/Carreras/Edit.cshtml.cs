@@ -36,7 +36,7 @@ namespace SistemaAcademico.Pages.Carreras
             {
                 return Page();
             }
-            ServiciosCarrera.editarCarrera(Carrera);
+            ServiciosCarrera.EditarCarrera(Carrera);
             return RedirectToPage("Index");
         }
     }

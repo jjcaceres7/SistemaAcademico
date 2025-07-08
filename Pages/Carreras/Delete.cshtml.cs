@@ -12,7 +12,7 @@ namespace SistemaAcademico.Pages.Carreras
         public Carrera Carrera { get; set; }
         public IActionResult OnGet(int id)
         {
-          
+
             var carrera = Servicios.ServiciosCarrera.ObtenerCarreraPorId(id);
             if (carrera == null)
             {
