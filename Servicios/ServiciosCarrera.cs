@@ -55,6 +55,7 @@ namespace SistemaAcademico.Servicios
             }
         }
 
+
         public static void EditarCarrera(Carrera carreraEditada)
         {
             var carreras = ObtenerCarrerasLista();

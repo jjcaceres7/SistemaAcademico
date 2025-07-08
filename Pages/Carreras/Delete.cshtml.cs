@@ -18,6 +18,7 @@ namespace SistemaAcademico.Pages.Carreras
             {
                 return RedirectToPage("Index");
             }
+
             Carrera = carrera;
             return Page();
 
