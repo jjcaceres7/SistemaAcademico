@@ -16,7 +16,7 @@ namespace SistemaAcademico.Models
 
         [Required(ErrorMessage = "debe agregar el DNI")]
         [StringLength(10, ErrorMessage = "no puede superar los 10 caracteres")]
-        public int Dni { get; set; }
+        public string Dni { get; set; }
 
 
         [Required(ErrorMessage = "debe agregar un email")]
