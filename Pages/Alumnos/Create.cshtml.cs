@@ -10,6 +10,8 @@ namespace SistemaAcademico.Pages.Alumnos
 {
     public class CreateModel : PageModel
     {
+
+
         [BindProperty]
         public Alumno Alumno { get; set; }
 
