@@ -1,0 +1,28 @@
+﻿@page
+@model SistemaAcademico.Pages.Libros.CreateModel
+@{
+}
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Libro.Title"></label>
+        <input asp-for="Libro.Title" class="form-control" />
+        <span asp-validation-for="Libro.Title" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Libro.Autor"></label>
+        <input asp-for="Libro.Autor" class="form-control" />
+        <span asp-validation-for="Libro.Autor" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Libro.Year"></label>
+        <input asp-for="Libro.Year" class="form-control" />
+        <span asp-validation-for="Libro.Year" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Libro.Genders"></label>
+        <input asp-for="Libro.Genders" class="form-control" />
+        <span asp-validation-for="Libro.Genders" class="text-danger"></span>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>

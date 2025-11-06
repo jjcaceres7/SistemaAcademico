@@ -1,0 +1,25 @@
+﻿@page
+@model SistemaAcademico.Pages.Libros.EditModel
+@{
+}
+<form method="post">
+    <input type="hidden" asp-for="Libro.Id" />
+    <div class="form-group">
+        <label asp-for="Libro.Title"></label>
+        <input asp-for="Libro.Title" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Libro.Autor"></label>
+        <input asp-for="Libro.Autor" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Libro.Year"></label>
+        <input asp-for="Libro.Year" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Libro.Genders"></label>
+        <input asp-for="Libro.Genders" class="form-control" />
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
