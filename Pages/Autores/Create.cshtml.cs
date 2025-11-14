@@ -6,27 +6,24 @@ using SistemaAcademico.Repositorio;
 using SistemaAcademico.Servicios;
 
 
-namespace SistemaAcademico.Pages.Libros
+namespace SistemaAcademico.Pages.Autores
 {
     public class CreateModel : PageModel
     {
 
 
         [BindProperty]
-        public Libro Libro { get; set; }
+        public Autor Autor { get; set; }
 
-        private readonly ServicioLibro servicio;
-        public List<Autor> Autores { get; set; }
+        private readonly ServicioAutor servicio;
         public CreateModel()
         {
-            IAccesoDatos<Libro> acceso = new AccesoDatosJson<Libro>("Libros");
-            IRepositorio<Libro> repo = new RepositorioCrudJson<Libro>(acceso);
-            servicio = new ServicioLibro(repo);
+            IAccesoDatos<Autor> acceso = new AccesoDatosJson<Autor>("Autores");
+            IRepositorio<Autor> repo = new RepositorioCrudJson<Autor>(acceso);
+            servicio = new ServicioAutor(repo);
         }
         public void OnGet()
         {
-            var opciones = new Helpers.OpcionesAutores();
-            Autores = opciones.Autor;
         }
 
         public IActionResult OnPost()
@@ -36,7 +33,7 @@ namespace SistemaAcademico.Pages.Libros
                 return Page();
             }
 
-            servicio.Agregar(Libro);
+            servicio.Agregar(Autor);
 
             return RedirectToPage("Index");
         }

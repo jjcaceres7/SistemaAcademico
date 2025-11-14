@@ -5,30 +5,31 @@ using SistemaAcademico.Models;
 using SistemaAcademico.Repositorio;
 using SistemaAcademico.Servicios;
 
-
-namespace SistemaAcademico.Pages.Libros
+namespace SistemaAcademico.Pages.Autores
 {
-    public class CreateModel : PageModel
+    public class EditModel : PageModel
     {
-
-
         [BindProperty]
-        public Libro Libro { get; set; }
-
-        private readonly ServicioLibro servicio;
+        public Autor Autor { get; set; }
         public List<Autor> Autores { get; set; }
-        public CreateModel()
+
+        private readonly ServicioAutor servicio;
+        public EditModel()
         {
-            IAccesoDatos<Libro> acceso = new AccesoDatosJson<Libro>("Libros");
-            IRepositorio<Libro> repo = new RepositorioCrudJson<Libro>(acceso);
-            servicio = new ServicioLibro(repo);
+            IAccesoDatos<Autor> acceso = new AccesoDatosJson<Autor>("Autores");
+            IRepositorio<Autor> repo = new RepositorioCrudJson<Autor>(acceso);
+            servicio = new ServicioAutor(repo);
         }
-        public void OnGet()
+        public void OnGet(int id)
         {
+            Autor? autor = servicio.BuscarPorId(id);
+            if (autor != null)
+            {
+                Autor = autor;
+            }
             var opciones = new Helpers.OpcionesAutores();
             Autores = opciones.Autor;
         }
-
         public IActionResult OnPost()
         {
             if (!ModelState.IsValid)
@@ -36,7 +37,7 @@ namespace SistemaAcademico.Pages.Libros
                 return Page();
             }
 
-            servicio.Agregar(Libro);
+            servicio.Editar(Autor);
 
             return RedirectToPage("Index");
         }

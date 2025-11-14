@@ -1,10 +1,10 @@
 ﻿@page
-@model SistemaAcademico.Pages.Libros.IndexModel
+@model SistemaAcademico.Pages.Autores.IndexModel
 
-<a asp-page="Create" class="btn btn-success mb-3">Agregar Libro</a>
-@if (Model.Libro.Count == 0)
+<a asp-page="Create" class="btn btn-success mb-3">Agregar Autor</a>
+@if (Model.Autor.Count == 0)
 {
-	<p class="text-muted">no hay libros cargados</p>
+	<p class="text-muted">no hay Autores cargados</p>
 }
 else
 {
@@ -12,25 +12,21 @@ else
 		<thead>
 			<tr>
 				<th>ID</th>
-				<th>Titulo</th>
-				<th>Autor</th>
-				<th>Año</th>
-				<th>Generos</th>
+				<th>Nombre</th>
+				<th>Pais</th>
 				<th>Acciones</th>
 			</tr>
 		</thead>
 		<tbody>
-			@foreach (var libro in Model.Libro)
+			@foreach (var autor in Model.Autor)
 			{
 				
 				<tr>
-					<td>@libro.Id</td>
-					<td>@libro.Title</td>
-					<td>@Model.AutorMap.GetValueOrDefault(int.TryParse(libro.Autor, out var id) ? id : -1)?.Name</td>
-					<td>@libro.Year</td>
-					<td>@libro.Genders</td>
+					<td>@autor.Id</td>
+					<td>@autor.Name</td>
+					<td>@autor.Country</td>
 					<td>
-						<a asp-page="Edit" asp-route-id="@libro.Id" class="btn btn-warning btn-sm" title="Editar">
+						<a asp-page="Edit" asp-route-id="@autor.Id" class="btn btn-warning btn-sm" title="Editar">
 							<svg xmlns="http://www.w3.org/2000/svg"
 								 viewBox="0 0 24 24"
 								 width="20"
@@ -45,7 +41,7 @@ else
 								<path d="M11 4H6C4.93913 4 3.92178 4.42142 3.17163 5.17157C2.42149 5.92172 2 6.93913 2 8V18C2 19.0609 2.42149 20.0783 3.17163 20.8284C3.92178 21.5786 4.93913 22 6 22H17C19.21 22 20 20.2 20 18V13" />
 							</svg>
 						</a>
-						<a asp-page="Delete" asp-route-id="@libro.Id" class="btn btn-danger btn-sm" title="Eliminar">
+						<a asp-page="Delete" asp-route-id="@autor.Id" class="btn btn-danger btn-sm" title="Eliminar">
 							<svg xmlns="http://www.w3.org/2000/svg"
 								 viewBox="0 0 24 24"
 								 width="20"

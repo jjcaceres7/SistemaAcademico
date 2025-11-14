@@ -1,0 +1,17 @@
+[
+  {
+    "Id": 0,
+    "Name": "Gabriel García Márquez",
+    "Country": "Colombiana"
+  },
+  {
+    "Id": 1,
+    "Name": "Isabel Allende",
+    "Country": "Chilena"
+  },
+  {
+    "Id": 2,
+    "Name": "Juan Caceres",
+    "Country": "Argentino"
+  }
+]

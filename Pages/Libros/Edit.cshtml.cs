@@ -11,6 +11,7 @@ namespace SistemaAcademico.Pages.Libros
     {
         [BindProperty]
         public Libro Libro { get; set; }
+        public List<Autor> Autores { get; set; }
 
         private readonly ServicioLibro servicio;
         public EditModel()
@@ -26,6 +27,8 @@ namespace SistemaAcademico.Pages.Libros
             {
                 Libro = libro;
             }
+            var opciones = new Helpers.OpcionesAutores();
+            Autores = opciones.Autor;
         }
         public IActionResult OnPost()
         {

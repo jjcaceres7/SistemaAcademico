@@ -1,0 +1,20 @@
+﻿@page
+@model SistemaAcademico.Pages.Autores.DeleteModel
+@{
+}
+<input type="hidden" asp-for="Autor.Id" />
+
+<form method="post">
+	<h4>Eliminaras este Autor:</h4>
+
+	<div>
+		<strong>Nombre:</strong> @Model.Autor.Name
+	</div>
+	<div>
+		<strong>Pais:</strong> @Model.Autor.Country
+	</div>
+	
+	<br />
+	<button type="submit" class="btn btn-danger">Eliminar</button>
+	<a asp-page="Index" class="btn btn-secondary">Cancelar</a>
+</form>

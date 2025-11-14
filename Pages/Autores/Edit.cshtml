@@ -1,0 +1,17 @@
+﻿@page
+@model SistemaAcademico.Pages.Autores.EditModel
+@{
+}
+<form method="post">
+    <input type="hidden" asp-for="Autor.Id" />
+    <div class="form-group">
+        <label asp-for="Autor.Name"></label>
+        <input asp-for="Autor.Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Autor.Country"></label>
+        <input asp-for="Autor.Country" class="form-control" />
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
