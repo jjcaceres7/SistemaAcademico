@@ -4,6 +4,7 @@
     {
         List<T> ObtenerDatos();
         T? BuscarPorId(int id);
+        T? BuscarPorIdAutor(int id);
         void Agregar(T e);
         void Editar(T e);
         void EliminarPorId(int id);

@@ -8,16 +8,16 @@
 	<h4>Eliminaras este libro:</h4>
 
 	<div>
-		<strong>Nombre:</strong> @Model.Libro.Title
+		<strong>Titulo:</strong> @Model.Libro.Title
 	</div>
 	<div>
-		<strong>Apellido:</strong> @Model.Libro.Autor
+		<strong>Autor:</strong> @Model.AutorMap.GetValueOrDefault(int.TryParse(Model.Libro.Autor, out var id) ? id : -1)?.Name
 	</div>
 	<div>
-		<strong>DNI:</strong> @Model.Libro.Year
+		<strong>Año:</strong> @Model.Libro.Year
 	</div>
 	<div>
-		<strong>Email:</strong> @Model.Libro.Genders
+		<strong>Generos:</strong> @Model.Libro.Genders
 	</div>
 	
 	<br />

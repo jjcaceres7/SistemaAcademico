@@ -22,6 +22,13 @@ namespace SistemaAcademico.Servicios
         {
             return _repo.BuscarPorId(id);
         }
+        public List<Libro> BuscarPorIdAutor(int id)
+        {
+            var libros = _repo.ObtenerDatos();
+            return libros.Where(l => l.Autor == ""+id).ToList();
+
+        }
+
         public void Agregar(Libro Libro)
         {
             _repo.Agregar(Libro);

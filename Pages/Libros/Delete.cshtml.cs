@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SistemaAcademico.AccesoDatos;
+using SistemaAcademico.Helpers;
 using SistemaAcademico.Models;
 using SistemaAcademico.Repositorio;
 using SistemaAcademico.Servicios;
@@ -13,6 +14,9 @@ namespace SistemaAcademico.Pages.Libros
         public Libro Libro { get; set; }
 
         private readonly ServicioLibro servicio;
+
+        public Dictionary<int, Autor> AutorMap { get; set; }
+
         public DeleteModel()
         {
             IAccesoDatos<Libro> acceso = new AccesoDatosJson<Libro>("Libros");
@@ -28,7 +32,14 @@ namespace SistemaAcademico.Pages.Libros
             }
 
             Libro = libro;
+
+
+            var opciones = new OpcionesAutores();
+            AutorMap = opciones.AutorMap;
+
             return Page();
+
+
         }
         public IActionResult OnPost(int id)
         {

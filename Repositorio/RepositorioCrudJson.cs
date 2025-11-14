@@ -1,4 +1,5 @@
 ﻿using SistemaAcademico.AccesoDatos;
+using SistemaAcademico.Models;
 
 namespace SistemaAcademico.Repositorio
 {
@@ -9,6 +10,29 @@ namespace SistemaAcademico.Repositorio
         {
             _acceso = acceso;
         }
+
+
+
+        public T? BuscarPorIdAutor(int autorId)
+        {
+            var lista = ObtenerDatos();
+            var propiedadAutor = typeof(T).GetProperty("Autor");
+
+            if (propiedadAutor == null)
+                return null; // si T no tiene Autor, devolver null
+
+            foreach (var item in lista)
+            {
+                int valorAutor = (int)propiedadAutor.GetValue(item);
+                if (valorAutor == autorId)
+                {
+                    return item; // devuelve uno solo
+                }
+            }
+
+            return null;
+        }
+
 
         public List<T> ObtenerDatos()
         {
@@ -67,6 +91,8 @@ namespace SistemaAcademico.Repositorio
             var lista = ObtenerDatos();
             return BuscarEnListaPorId(lista, id);
         }
+
+
         public void EliminarPorId(int id)
         {
             var lista = ObtenerDatos();
