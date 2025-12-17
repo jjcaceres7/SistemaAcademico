@@ -1,16 +1,1 @@
-[
-  {
-    "Id": 1,
-    "Title": "1984",
-    "Autor": "0",
-    "Year": 1949,
-    "Genders": "Distop\u00EDa"
-  },
-  {
-    "Id": 3,
-    "Title": "Don Quijote de la Mancha",
-    "Autor": "0",
-    "Year": 1111,
-    "Genders": "terror, comedia"
-  }
-]
+[{"Id":1,"Title":"1984","Autor":"0","Year":1949,"Genders":"Distop\u00EDa"},{"Id":3,"Title":"Don Quijote de la Mancha","Autor":"0","Year":1111,"Genders":"terror, comedia"},{"Id":4,"Title":"Biografia de Juan ","Autor":"3","Year":1999,"Genders":"hombre"}]

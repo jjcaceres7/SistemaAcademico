@@ -1,0 +1,30 @@
+﻿@page
+@model SistemaAcademico.Pages.Relaciones.IndexModel
+@{
+}
+
+<button class="btn btn-primary" onclick="imprimir()">
+    Imprimir
+</button>
+<div>
+    <table id="tablaRelaciones" class="tablaRelaciones">
+    <thead>
+        <th>
+            Autor
+        </th>
+        <th>Titulo</th>
+        <th>Id</th>
+        <th>Año</th>
+        <th>Genero</th>
+    </thead>
+</table>
+</div>
+
+<div id="muestra">
+
+</div>
+<script>
+    window.DatosDelServidor = JSON.parse('@Html.Raw(Model.DatosJson)');
+    window.DatosDelServidorAutores = JSON.parse('@Html.Raw(Model.DatosAutores)')
+</script>
+<script src="~/js/relaciones.js"></script>

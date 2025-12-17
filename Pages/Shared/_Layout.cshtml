@@ -31,14 +31,17 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Autores/Index">Autores</a>
                         </li>
-                        @* <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Relaciones/Index">Imprimir</a>
+                        </li>
+                        @* <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li> *@
                     </ul>
                 </div>
+                <button class="btn btn-outline-secondary" onclick="toggleDarkMode()">
+                    MO
+                </button>
             </div>
         </nav>
     </header>
@@ -57,7 +60,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-
+    <script src="~/js/modoOscuro.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

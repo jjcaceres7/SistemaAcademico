@@ -2,8 +2,9 @@ html {
   font-size: 14px;
 }
 
+
 @media (min-width: 768px) {
-  html {
+    html {
     font-size: 16px;
   }
 }
@@ -19,4 +20,139 @@ html {
 
 body {
   margin-bottom: 60px;
+}
+
+
+
+body.dark {
+background-color: #121212;
+color: #e0e0e0;
+}
+
+
+body.dark .bg-light {
+    background-color: #1e1e1e !important;
+}
+
+body.dark .text-dark {
+    color: #e0e0e0 !important;
+}
+
+body.dark .card {
+    background-color: #1e1e1e;
+    border-color: #333;
+}
+
+body.dark .navbar {
+    background-color: #1b1b1b !important;
+}
+
+body.dark .table {
+    color: #e0e0e0;
+}
+
+body.dark .form-control {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+body.dark .form-control:focus {
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+body.dark .btn-primary {
+    background-color: #2563eb;
+    border-color: #2563eb;
+}
+
+body.dark .navbar {
+    background-color: #1b1b1b !important;
+}
+
+body.dark .navbar-brand,
+body.dark .navbar-nav .nav-link {
+    color: #e0e0e0 !important;
+}
+
+/* Ícono hamburguesa */
+body.dark .navbar-toggler {
+    border-color: #555;
+}
+
+body.dark .navbar-toggler-icon {
+    filter: invert(1);
+}
+
+
+
+.tablaRelaciones {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.tablaRelaciones thead th {
+    background-color: #f1f3f5;
+    color: #212529;
+    font-weight: 600;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.tablaRelaciones tbody tr {
+    background-color: #ffffff;
+}
+
+    .tablaRelaciones tbody tr:nth-child(even) {
+        background-color: #f8f9fa;
+    }
+
+.tablaRelaciones td,
+.tablaRelaciones th {
+    padding: 0.75rem;
+    vertical-align: middle;
+}
+
+body.dark .tablaRelaciones thead th {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    border-bottom: 2px solid #333;
+}
+
+body.dark .tablaRelaciones tbody tr {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark .tablaRelaciones tbody tr:nth-child(even) {
+    background-color: #181818;
+}
+
+body.dark .tablaRelaciones td,
+body.dark .tablaRelaciones th {
+    
+}
+
+
+
+@media print {
+
+    /* Oculta todo */
+    body * {
+        visibility: hidden;
+    }
+
+    /* Muestra solo la tabla */
+    #tablaRelaciones,
+    #tablaRelaciones * {
+        visibility: visible;
+    }
+
+    /* Posición limpia */
+    #tablaRelaciones {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
 }
